@@ -1,0 +1,34 @@
+[
+    {
+        "detail": "rules about Microtasks",
+        "tagName": "Microtask"
+    },
+    {
+        "detail": "rules about \"Command\" classes and their subclasses, methods and method calls.",
+        "tagName": "Command"
+    },
+    {
+        "tagName": "Sharding",
+        "detail": "All non-transient application state is sharded. Sharding is the process of decomposing application state into data groups, which may each be distributed to different servers. By ensuring that each server only accesses data in a single shard, each shard may support computation on different servers in parallel. Shards are indicated by an @Entity annotation, which designates that an instance of the class (and all objects referenced by its member fields) are a shard."
+    },
+    {
+        "detail": "rules about entity classes and subclasses, i.e. those classes annotated with \"Entity\" and \"Subclass\". Entity objects are persisted by \"Objectify\" \nAn Artifact represents an element that users are creating. \nrules about artifact classes. These classes are entities and are persisted by \"Objectify\"",
+        "tagName": "Entity"
+    },
+    {
+        "detail": "rules about Objectify and Objectify method calls which are needed for persisting data",
+        "tagName": "Objectify"
+    },
+    {
+        "detail": "rules about serialization required for persisting data\nrules about Data Transfer Object\nWe need some subset of the state of the class that is important and needed to be persisted. \nSome other parts of the state is a volatile state or not important and can be reconstructed. \nWhen part of a class is persisted (in Firebase) or transferred to a client.",
+        "tagName": "Serialization"
+    },
+    {
+        "tagName": "Persistence",
+        "detail": "All in-memory data is discarded at the end of every http request. As a result, for application state to be non-transient, it must be persisted. This persistence is done using the Objectify framework, which wraps the underlying calls to store the data using the Google AppEngine Datastore."
+    },
+    {
+        "tagName": "Data Transfer Objects",
+        "detail": "A Data Transfer Object (DTO) is an object designed to send data to an external service. As such, it is not intended to have mutable state or operations on this state and simply exists to record the state in the format that the external service expects. DTOs are used to send data to and from the client and to send data to the Firebase service. Serialization is handled through the Jackson JSON library."
+    }
+]
